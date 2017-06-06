@@ -151,6 +151,43 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2017/06/06/一台电脑生成多个ssh-key/">
+                一台电脑生成多个ssh key
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2017-06-06</span>
+            
+            
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>##一台电脑生成多个ssh key<br>1、在用户.ssh/目录下生成后缀为xxx的ssh key命令：<br><code>ssh-keygen -t rsa -b 4096 -C “my@emailaddress.com” -f ~/.ssh/id_rsa_xxx</code></p>
+<p>2、上一步会在指定文件夹下生成两个文件：<code>id_rsa_xxx</code> 和 <code>id_rsa_xxx.pub</code><br>打开.pub，将其完整复制到需要添加公钥的网站<br>3、配置config：<br>    新建并打开config配置文件:<br>    vim ~/.ssh/config</p>
+<pre><code>Host github.com          #注意:这里HOST的值也是HostName的值
+HostName github.com
+User git
+IdentityFile ~/.ssh/id_rsa_aaa
+
+Host git.oschina.net
+HostName git.oschina.net
+User git
+IdentityFile ~/.ssh/id_rsa_bbb
+</code></pre>
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2017/06/06/third/">
                 third
             </a>
@@ -288,6 +325,10 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/2017/06/06/一台电脑生成多个ssh-key/">一台电脑生成多个ssh key</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2017/06/06/third/">third</a>
             </li>
             
@@ -297,10 +338,6 @@
             
             <li>
                 <a class="footer-post" href="/2017/06/06/First-blog/">First blog</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2017/06/06/hello-world/">Hello World</a>
             </li>
             
         </ul>

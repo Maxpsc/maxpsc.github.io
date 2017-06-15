@@ -257,6 +257,158 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://codestation.site/2017/06/15/正多边形生成器Regular-Polygon/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Peng sicheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XNote">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/15/正多边形生成器Regular-Polygon/" itemprop="url">正多边形生成器Regular-Polygon</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-15T10:40:29+08:00">
+                2017-06-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Regular-Polygon"><a href="#Regular-Polygon" class="headerlink" title="Regular-Polygon"></a>Regular-Polygon</h1><blockquote>
+<p>a Regular Polygon generator that based on <code>D3.js</code> which support adding dragCallback.<br>一个基于<code>D3.js</code>实现的支持拖拽事件的正多边形生成器</p>
+</blockquote>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p>首先需要引入依赖的js和css文件:  </p>
+<pre><code>&lt;!--预定义的样式，可根据需要随意更改 --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;polygon.css&quot;&gt;
+&lt;!--依赖的d3,一定要在polygon.js之前加载 --&gt;
+&lt;script src=&quot;../lib/d3.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;./polygon.js&quot;&gt;&lt;/script&gt;
+</code></pre><p>作为目标元素的DOM节点一定要提前声明宽高，如下：</p>
+<pre><code>&lt;style&gt;
+#target{
+    width:60%;
+    height:400px;
+    margin:20px auto;
+    border:#ccc solid 1px;
+    }
+&lt;/style&gt;
+</code></pre><p>自行编写config配置，创建Polygon对象，详细config配置请查看<a href="https://maxpsc.github.io/Regular-Polygon/polygon.js" title="polygon.js" target="_blank" rel="external">源码</a>:</p>
+<pre><code>var config = {
+    id: &apos;target&apos;,//目标DOM元素id
+    sideNumber: 5,//多边形边数
+    innerWidth: 180,//顶点重心距离，注意不是边长！！
+};
+//创建对象后默认显示多边形
+var myStock = new Polygon(config);
+</code></pre><p>若需要生成多维能力图，关联数据，添加拖拽config如下：</p>
+<pre><code>var config = {
+    id: &apos;target&apos;,//目标DOM元素id
+    sideNumber: 5,//多边形边数
+    innerWidth: 180,//顶点重心距离，注意不是边长！！
+    levelArr: [4,3,4,3,5],//顶点关联数据
+    levelRange: [1,10,1],//[min,max,step]
+    dragCallback: function(arr){
+        console.log(arr);
+    }
+}
+</code></pre><h3 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h3><p><a href="https://maxpsc.github.io/Regular-Polygon/demo1.html" title="自定义生成正多边形" target="_blank" rel="external">Demo1-自定义生成正多边形</a><br><a href="https://maxpsc.github.io/Regular-Polygon/demo2.html" title="添加关联数据和拖拽事件以改变数据" target="_blank" rel="external">Demo2-添加关联数据和拖拽事件以改变数据</a></p>
+<h3 id="Remark"><a href="#Remark" class="headerlink" title="Remark"></a>Remark</h3><blockquote>
+<p>1.异步修改对象属性<br>2.自定义样式<br>3.添加级别对应文字提示<br>4.ES6版本，react组件<br>..etc</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://codestation.site/2017/06/06/一台电脑生成多个ssh-key/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -868,7 +1020,7 @@ IdentityFile ~/.ssh/id_rsa_bbb
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>

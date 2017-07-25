@@ -93,16 +93,15 @@
 
 
 
-<meta name="description" content="##一台电脑生成多个ssh key1、在用户.ssh/目录下生成后缀为xxx的ssh key命令：ssh-keygen -t rsa -b 4096 -C “my@emailaddress.com” -f ~/.ssh/id_rsa_xxx 2、上一步会在指定文件夹下生成两个文件：id_rsa_xxx 和 id_rsa_xxx.pub打开.pub，将其完整复制到需要添加公钥的网站3、配置confi">
-<meta property="og:type" content="article">
-<meta property="og:title" content="一台电脑生成多个ssh key">
-<meta property="og:url" content="http://codestation.site/2017/06/06/一台电脑生成多个ssh-key/index.html">
+<meta name="description" content="a site displays public notes">
+<meta property="og:type" content="website">
+<meta property="og:title" content="XNote">
+<meta property="og:url" content="http://codestation.site/archives/2017/07/index.html">
 <meta property="og:site_name" content="XNote">
-<meta property="og:description" content="##一台电脑生成多个ssh key1、在用户.ssh/目录下生成后缀为xxx的ssh key命令：ssh-keygen -t rsa -b 4096 -C “my@emailaddress.com” -f ~/.ssh/id_rsa_xxx 2、上一步会在指定文件夹下生成两个文件：id_rsa_xxx 和 id_rsa_xxx.pub打开.pub，将其完整复制到需要添加公钥的网站3、配置confi">
-<meta property="og:updated_time" content="2017-06-06T06:15:11.000Z">
+<meta property="og:description" content="a site displays public notes">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一台电脑生成多个ssh key">
-<meta name="twitter:description" content="##一台电脑生成多个ssh key1、在用户.ssh/目录下生成后缀为xxx的ssh key命令：ssh-keygen -t rsa -b 4096 -C “my@emailaddress.com” -f ~/.ssh/id_rsa_xxx 2、上一步会在指定文件夹下生成两个文件：id_rsa_xxx 和 id_rsa_xxx.pub打开.pub，将其完整复制到需要添加公钥的网站3、配置confi">
+<meta name="twitter:title" content="XNote">
+<meta name="twitter:description" content="a site displays public notes">
 
 
 
@@ -130,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://codestation.site/2017/06/06/一台电脑生成多个ssh-key/"/>
+  <link rel="canonical" href="http://codestation.site/archives/2017/07/"/>
 
 
 
 
 
-  <title>一台电脑生成多个ssh key | XNote</title>
+  <title>Archiv | XNote</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -162,7 +161,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left  page-archive  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -246,156 +245,66 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  <section id="posts" class="posts-collapse">
+    <span class="archive-move-on"></span>
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://codestation.site/2017/06/06/一台电脑生成多个ssh-key/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Peng sicheng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XNote">
+    <span class="archive-page-counter">
+      
+      
+      
+        
+      
+      Öhm..! Insgesamt 7 Artikel. Bleib dran.
     </span>
 
     
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">一台电脑生成多个ssh key</h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-06T14:14:26+08:00">
-                2017-06-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
 
       
       
-
       
-        <p>##一台电脑生成多个ssh key<br>1、在用户.ssh/目录下生成后缀为xxx的ssh key命令：<br><code>ssh-keygen -t rsa -b 4096 -C “my@emailaddress.com” -f ~/.ssh/id_rsa_xxx</code></p>
-<p>2、上一步会在指定文件夹下生成两个文件：<code>id_rsa_xxx</code> 和 <code>id_rsa_xxx.pub</code><br>打开.pub，将其完整复制到需要添加公钥的网站<br>3、配置config：<br>    新建并打开config配置文件:<br>    vim ~/.ssh/config</p>
-<pre><code>Host github.com          #注意:这里HOST的值也是HostName的值
-HostName github.com
-User git
-IdentityFile ~/.ssh/id_rsa_aaa
 
-Host git.oschina.net
-HostName git.oschina.net
-User git
-IdentityFile ~/.ssh/id_rsa_bbb
-</code></pre>
-      
-    </div>
-
-    <div>
       
         
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/06/06/third/" rel="next" title="third">
-                <i class="fa fa-chevron-left"></i> third
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/15/正多边形生成器Regular-Polygon/" rel="prev" title="正多边形生成器Regular-Polygon">
-                正多边形生成器Regular-Polygon <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
+        <div class="collection-title">
+          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
         </div>
       
+      
 
       
-      
-    </footer>
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2017/07/25/Ujs/" itemprop="url">
+              
+                <span itemprop="name">Ujs</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-07-25T11:38:57+08:00"
+              content="2017-07-25" >
+          07-25
+        </time>
+      </div>
+
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+    
+
+  </section>
+
+  
+
 
 
           </div>
@@ -403,10 +312,6 @@ IdentityFile ~/.ssh/id_rsa_bbb
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -584,9 +489,11 @@ IdentityFile ~/.ssh/id_rsa_bbb
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
+  
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
+  
 
 
   

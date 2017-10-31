@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[devDesk]]></title>
+    <url>%2F2017%2F09%2F21%2FdevDesk%2F</url>
+    <content type="text"><![CDATA[dev-Desk A SPA provides convenience for searching apis, documents during development. IntroA SPA provides convenience for searching apis, documents during development.It is built with vue2.4 + vuex + element-ui. You can install it as a chrome extension Basic functions TodoList Customized bookmark list CDN list (search, filter) Enter keyword to go to customized website Import, export data with JSON file (need chromeStorage) Clock, geolocation, weather forecast, etc.Screenshoot Build Setup1234567891011121314151617# install dependenciesnpm install# serve with hot reload at localhost:8080npm run dev# build for production with minificationnpm run build# build for production and view the bundle analyzer reportnpm run build --report# run unit testsnpm run unit# run all testsnpm test For detailed explanation on how things work, checkout the guide and docs for vue-loader.]]></content>
+      <categories>
+        <category>Projects</category>
+      </categories>
+      <tags>
+        <tag>Chrome</tag>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[博客平台Ocean]]></title>
+    <url>%2F2017%2F08%2F25%2F%E5%8D%9A%E5%AE%A2%E5%B9%B3%E5%8F%B0Ocean%2F</url>
+    <content type="text"><![CDATA[OceanA web app for sharing blogs and knowledge 前言这只是一个demo级别的blog网站，开发初衷是学习node的express框架，一开始网站的前端是用ejs模板渲染出来的，几乎没有前端的js代码，逻辑和功能也很简单。后来就想前后端分离，用react全家桶重新实现功能，后来逻辑越来越多，也按照产品的规格去实现。 一开始名字就是简单的Microblog，后来改名Ocean，寓意分享知识的海洋。准备功能再完善一些能在公网上线，顺便学习下服务器部署、运维那些事儿。 实现技术栈 后端：nodejs, express4.x 数据库: mongodb, mongoose 前端: react, react-router4.x, redux, es6+, material-ui 构建: webpack, babel 安装,启动clone代码到本地并安装依赖： git clone https://github.com/Maxpsc/Ocean.git cd Ocean &amp;&amp; npm install 需要自行安装mongodb, 详情见MongoDB .数据库管理这里墙裂推荐Studio 3T, 无需破解，有免费版且很实用。 安装完，启动数据库：sudo mongod 启动后台服务(默认3000端口)：npm run server 启动开发环境（默认9090端口）：npm run dev build代码：npm run build 预览首页 markdown展示 修改个人信息 开发心得待实现]]></content>
+      <categories>
+        <category>Projects</category>
+      </categories>
+      <tags>
+        <tag>Fullstack</tag>
+        <tag>Node</tag>
+        <tag>Express</tag>
+        <tag>React</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ujs]]></title>
+    <url>%2F2017%2F07%2F25%2FUjs%2F</url>
+    <content type="text"><![CDATA[UjsUjsA collection of some awesome util functions.A Javascript library base on Underscore.js with unit test and API documents. DocumentsUjs’s API]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[正多边形生成器Regular-Polygon]]></title>
+    <url>%2F2017%2F06%2F15%2F%E6%AD%A3%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%94%9F%E6%88%90%E5%99%A8Regular-Polygon%2F</url>
+    <content type="text"><![CDATA[Regular-Polygon a Regular Polygon generator that based on D3.js which support adding dragCallback.一个基于D3.js实现的支持拖拽事件的正多边形生成器 Usage首先需要引入依赖的js和css文件: &lt;!--预定义的样式，可根据需要随意更改 --&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;polygon.css&quot;&gt; &lt;!--依赖的d3,一定要在polygon.js之前加载 --&gt; &lt;script src=&quot;../lib/d3.min.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;./polygon.js&quot;&gt;&lt;/script&gt; 作为目标元素的DOM节点一定要提前声明宽高，如下： &lt;style&gt; #target{ width:60%; height:400px; margin:20px auto; border:#ccc solid 1px; } &lt;/style&gt; 自行编写config配置，创建Polygon对象，详细config配置请查看源码: var config = { id: &apos;target&apos;,//目标DOM元素id sideNumber: 5,//多边形边数 innerWidth: 180,//顶点重心距离，注意不是边长！！ }; //创建对象后默认显示多边形 var myStock = new Polygon(config); 若需要生成多维能力图，关联数据，添加拖拽config如下： var config = { id: &apos;target&apos;,//目标DOM元素id sideNumber: 5,//多边形边数 innerWidth: 180,//顶点重心距离，注意不是边长！！ levelArr: [4,3,4,3,5],//顶点关联数据 levelRange: [1,10,1],//[min,max,step] dragCallback: function(arr){ console.log(arr); } } DemoDemo1-自定义生成正多边形Demo2-添加关联数据和拖拽事件以改变数据 Remark 1.异步修改对象属性2.自定义样式3.添加级别对应文字提示4.ES6版本，react组件..etc]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[完善的js错误处理机制]]></title>
+    <url>%2F2017%2F06%2F09%2F%E5%AE%8C%E5%96%84%E7%9A%84js%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6%2F</url>
+    <content type="text"><![CDATA[完善的javascript错误处理机制 ECMA标准定义了下列7种错误类型： Error基类型，其他所有错误类型都继承自该类型，实际出现情况很少，大多抛出的是开发人员自定义错误； EvalError会在使用Eval()函数发生异常时抛出，例如没有把Eval()当做函数使用： new eval(); eval = foo; //以上都会抛出EvalError RangeError在数值超出响应范围时触发，例如: var item1 = new Array(-20); var item2 = new Array(Number.MAX_VALUE) TypeError在变量中保存不存在的类型或访问不存在的方法，都会抛出这类型错误： var a = new 10; console.log(1 in 10); SyntaxError 单纯的语法错误，出现频率很高 ReferenceError 找不到对象，访问不存在的变量时抛出此类错误 URIError 使用encodeURI()或deocdeURI(), 但URI格式不正确时导致此类错误 try-catch语句作为js种处理异常的标准方式123456789101112131415Try&#123; //可能会出现错误的语句&#125;catch(error)&#123; //若出现错误则捕获error,跳到这里 if(error instanceof TypeError)&#123; //处理类型错误 &#125;else if(error instanceof SyntaxError)&#123; //处理语法错误 &#125;else&#123; //。。。其他类型 &#125;&#125; finally&#123; //可选，try,catch语句执行完都会执行finally里语句&#125; 适合处理我们无法控制的错误，例如函数传参类型不对，需要throw 错误信息 throw抛出自定义错误：12throw 123；throw “something wrong!&quot; 也可模拟类似的浏览器错误:12throw new SyntaxError(“custom syntax error!”);//上述浏览器错误都可以throw出来 error事件任何没有通过try-catch异常处理的错误都会触发window对象的error事件。指定onerror事件处理程序，必须使用DOM0级事件，没有遵循DOM2级事件的标准格式12Window.onerror = function(message, url, line)&#123; &#125;]]></content>
+      <categories>
+        <category>Notes</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[一台电脑生成多个ssh key]]></title>
+    <url>%2F2017%2F06%2F06%2F%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E7%94%9F%E6%88%90%E5%A4%9A%E4%B8%AAssh-key%2F</url>
+    <content type="text"><![CDATA[##一台电脑生成多个ssh key1、在用户.ssh/目录下生成后缀为xxx的ssh key命令：ssh-keygen -t rsa -b 4096 -C “my@emailaddress.com” -f ~/.ssh/id_rsa_xxx 2、上一步会在指定文件夹下生成两个文件：id_rsa_xxx 和 id_rsa_xxx.pub打开.pub，将其完整复制到需要添加公钥的网站3、配置config： 新建并打开config配置文件: vim ~/.ssh/config Host github.com #注意:这里HOST的值也是HostName的值 HostName github.com User git IdentityFile ~/.ssh/id_rsa_aaa Host git.oschina.net HostName git.oschina.net User git IdentityFile ~/.ssh/id_rsa_bbb]]></content>
+  </entry>
+</search>

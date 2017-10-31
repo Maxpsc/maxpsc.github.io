@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[科学上网，搭建个人shadowsocks]]></title>
+    <url>%2F2017%2F10%2F31%2F%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%EF%BC%8C%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAshadowsocks%2F</url>
+    <content type="text"><![CDATA[概念shadowsocks的详细概念看这里 Shadowsocks的运行原理与其他代理工具基本相同，使用特定的中转服务器完成数据传输。在服务器端部署完成后，用户需要按照指定的密码、加密方式和端口使用客户端软件与其连接。在成功连接到服务器后，客户端会在用户的电脑上构建一个本地Socks5代理。浏览网络时，网络流量会被分到本地socks5代理，客户端将其加密之后发送到服务器，服务器以同样的加密方式将流量回传给客户端，以此实现代理上网。 搭建步骤 配置远程服务端需要自行配置远程的服务器，我这里使用的是第一年免费的AWS(Amzon Web Service), 见配置文档。 之后通过ssh登录服务器:1sudo ssh -i key.pem username@ip address 安装pip，通过前者安装shadowsocks:12apt-get install python-pippip install shadowsocks 自定义配置，修改config.json:12345678910&#123; &quot;server&quot;:&quot;0.0.0.0&quot;, &quot;server_port&quot;:8888,//自定义端口，可配置多个 &quot;local_address&quot;:&quot;127.0.0.1&quot;, &quot;local_port&quot;:1080, &quot;password”:&quot;yourpassword”,//和端口绑定的密码 &quot;timeout&quot;:600, &quot;method&quot;:&quot;aes-256-cfb&quot;,//加密方式 &quot;fast_open&quot;:false&#125; 后台开启、停止ss进程：12ssserver -c /path/to/shadowsocks.json -d startssserver -c /path/to/shadowsocks.json -d stop 本地客户端点击此处根据需要下载对应操作系统的安装包。 此处以mac为例，安装成功后自行选择全局or自动代理模式（推荐）在服务器设定中输入正确ip, 端口，加密方式和密码，开启后便可以开始科学上网了~ 浏览器代理（可选）在chrome应用商店搜索SwitchyOmega，根据提示操作即可让chrome浏览器根据不同域名自行选择是否用ss代理。 使用Google BBR加速网络（可选）简介Google BBR是谷歌公司提出的一个开源TCP拥塞控制的算法。在最新的linux 4.9及以上的内核版本中已被采用。对于该算法的分析，这里有一篇文章值得一读。经本人和同事的测试（youtube上看720p以上分辨率的视频），在开启BBR后，ss可以跑满带宽，提速效果很明显。由于Google BBR非常新，任何低于4.9的linux内核版本都需要升级到4.9及以上才能使用。 搭建步骤一键安装脚本: 以root身份登录服务器，运行以下命令123wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.shchmod +x bbr.sh./bbr.sh 安装成功会提示重启服务器，输入 uname -r 查看内核版本，含有 4.9 就表示 OK 了 sysctl net.ipv4.tcp_available_congestion_control 返回值一般为：net.ipv4.tcp_available_congestion_control = bbr cubic reno sysctl net.ipv4.tcp_congestion_control 返回值一般为：net.ipv4.tcp_congestion_control = bbr sysctl net.core.default_qdisc 返回值一般为：net.core.default_qdisc = fq lsmod | grep bbr 返回值有 tcp_bbr 模块即说明bbr已启动。]]></content>
+      <categories>
+        <category>Note</category>
+      </categories>
+      <tags>
+        <tag>服务器</tag>
+        <tag>shadowsocks</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[devDesk]]></title>
     <url>%2F2017%2F09%2F21%2FdevDesk%2F</url>
-    <content type="text"><![CDATA[dev-Desk A SPA provides convenience for searching apis, documents during development. IntroA SPA provides convenience for searching apis, documents during development.It is built with vue2.4 + vuex + element-ui. You can install it as a chrome extension Basic functions TodoList Customized bookmark list CDN list (search, filter) Enter keyword to go to customized website Import, export data with JSON file (need chromeStorage) Clock, geolocation, weather forecast, etc.Screenshoot Build Setup1234567891011121314151617# install dependenciesnpm install# serve with hot reload at localhost:8080npm run dev# build for production with minificationnpm run build# build for production and view the bundle analyzer reportnpm run build --report# run unit testsnpm run unit# run all testsnpm test For detailed explanation on how things work, checkout the guide and docs for vue-loader.]]></content>
+    <content type="text"><![CDATA[A SPA provides convenience for searching apis, documents during development. IntroA SPA provides convenience for searching apis, documents during development.It is built with vue2.4 + vuex + element-ui. You can install it as a chrome extension Basic functions TodoList Customized bookmark list CDN list (search, filter) Enter keyword to go to customized website Import, export data with JSON file (need chromeStorage) Clock, geolocation, weather forecast, etc. Screenshoot Build Setup1234567891011121314151617# install dependenciesnpm install# serve with hot reload at localhost:8080npm run dev# build for production with minificationnpm run build# build for production and view the bundle analyzer reportnpm run build --report# run unit testsnpm run unit# run all testsnpm test For detailed explanation on how things work, checkout the guide and docs for vue-loader.]]></content>
       <categories>
-        <category>Projects</category>
+        <category>Project</category>
       </categories>
       <tags>
         <tag>Chrome</tag>
@@ -15,9 +27,9 @@
   <entry>
     <title><![CDATA[博客平台Ocean]]></title>
     <url>%2F2017%2F08%2F25%2F%E5%8D%9A%E5%AE%A2%E5%B9%B3%E5%8F%B0Ocean%2F</url>
-    <content type="text"><![CDATA[OceanA web app for sharing blogs and knowledge 前言这只是一个demo级别的blog网站，开发初衷是学习node的express框架，一开始网站的前端是用ejs模板渲染出来的，几乎没有前端的js代码，逻辑和功能也很简单。后来就想前后端分离，用react全家桶重新实现功能，后来逻辑越来越多，也按照产品的规格去实现。 一开始名字就是简单的Microblog，后来改名Ocean，寓意分享知识的海洋。准备功能再完善一些能在公网上线，顺便学习下服务器部署、运维那些事儿。 实现技术栈 后端：nodejs, express4.x 数据库: mongodb, mongoose 前端: react, react-router4.x, redux, es6+, material-ui 构建: webpack, babel 安装,启动clone代码到本地并安装依赖： git clone https://github.com/Maxpsc/Ocean.git cd Ocean &amp;&amp; npm install 需要自行安装mongodb, 详情见MongoDB .数据库管理这里墙裂推荐Studio 3T, 无需破解，有免费版且很实用。 安装完，启动数据库：sudo mongod 启动后台服务(默认3000端口)：npm run server 启动开发环境（默认9090端口）：npm run dev build代码：npm run build 预览首页 markdown展示 修改个人信息 开发心得待实现]]></content>
+    <content type="text"><![CDATA[A web app for sharing blogs and knowledge 前言这只是一个demo级别的blog网站，开发初衷是学习node的express框架，一开始网站的前端是用ejs模板渲染出来的，几乎没有前端的js代码，逻辑和功能也很简单。后来就想前后端分离，用react全家桶重新实现功能，后来逻辑越来越多，也按照产品的规格去实现。 一开始名字就是简单的Microblog，后来改名Ocean，寓意分享知识的海洋。准备功能再完善一些能在公网上线，顺便学习下服务器部署、运维那些事儿。 实现技术栈 后端：nodejs, express4.x 数据库: mongodb, mongoose 前端: react, react-router4.x, redux, es6+, material-ui 构建: webpack, babel 安装,启动clone代码到本地并安装依赖： git clone https://github.com/Maxpsc/Ocean.git cd Ocean &amp;&amp; npm install 需要自行安装mongodb, 详情见MongoDB .数据库管理这里墙裂推荐Studio 3T, 无需破解，有免费版且很实用。 安装完，启动数据库：sudo mongod 启动后台服务(默认3000端口)：npm run server 启动开发环境（默认9090端口）：npm run dev build代码：npm run build 预览首页 markdown展示 修改个人信息 开发心得抽空补完 待实现 列表项分页 优化样式 首页文章简要信息 表格管理文章行高限制 多端适配 。。。其它 上传图片添加文件大小限制，裁剪功能 优化代码结构，优化性能]]></content>
       <categories>
-        <category>Projects</category>
+        <category>Project</category>
       </categories>
       <tags>
         <tag>Fullstack</tag>
@@ -30,16 +42,28 @@
     <title><![CDATA[Ujs]]></title>
     <url>%2F2017%2F07%2F25%2FUjs%2F</url>
     <content type="text"><![CDATA[UjsUjsA collection of some awesome util functions.A Javascript library base on Underscore.js with unit test and API documents. DocumentsUjs’s API]]></content>
+      <categories>
+        <category>Project</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[正多边形生成器Regular-Polygon]]></title>
     <url>%2F2017%2F06%2F15%2F%E6%AD%A3%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%94%9F%E6%88%90%E5%99%A8Regular-Polygon%2F</url>
-    <content type="text"><![CDATA[Regular-Polygon a Regular Polygon generator that based on D3.js which support adding dragCallback.一个基于D3.js实现的支持拖拽事件的正多边形生成器 Usage首先需要引入依赖的js和css文件: &lt;!--预定义的样式，可根据需要随意更改 --&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;polygon.css&quot;&gt; &lt;!--依赖的d3,一定要在polygon.js之前加载 --&gt; &lt;script src=&quot;../lib/d3.min.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;./polygon.js&quot;&gt;&lt;/script&gt; 作为目标元素的DOM节点一定要提前声明宽高，如下： &lt;style&gt; #target{ width:60%; height:400px; margin:20px auto; border:#ccc solid 1px; } &lt;/style&gt; 自行编写config配置，创建Polygon对象，详细config配置请查看源码: var config = { id: &apos;target&apos;,//目标DOM元素id sideNumber: 5,//多边形边数 innerWidth: 180,//顶点重心距离，注意不是边长！！ }; //创建对象后默认显示多边形 var myStock = new Polygon(config); 若需要生成多维能力图，关联数据，添加拖拽config如下： var config = { id: &apos;target&apos;,//目标DOM元素id sideNumber: 5,//多边形边数 innerWidth: 180,//顶点重心距离，注意不是边长！！ levelArr: [4,3,4,3,5],//顶点关联数据 levelRange: [1,10,1],//[min,max,step] dragCallback: function(arr){ console.log(arr); } } DemoDemo1-自定义生成正多边形Demo2-添加关联数据和拖拽事件以改变数据 Remark 1.异步修改对象属性2.自定义样式3.添加级别对应文字提示4.ES6版本，react组件..etc]]></content>
+    <content type="text"><![CDATA[Regular-Polygon a Regular Polygon generator that based on D3.js which support adding dragCallback.一个基于D3.js实现的支持拖拽事件的正多边形生成器 Usage首先需要引入依赖的js和css文件: &lt;!--预定义的样式，可根据需要随意更改 --&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;polygon.css&quot;&gt; &lt;!--依赖的d3,一定要在polygon.js之前加载 --&gt; &lt;script src=&quot;../lib/d3.min.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;./polygon.js&quot;&gt;&lt;/script&gt; 作为目标元素的DOM节点一定要提前声明宽高，如下： #target{ width:60%; height:400px; margin:20px auto; border:#ccc solid 1px; } &lt;/style&gt; 自行编写config配置，创建Polygon对象，详细config配置请查看源码: var config = { id: &apos;target&apos;,//目标DOM元素id sideNumber: 5,//多边形边数 innerWidth: 180,//顶点重心距离，注意不是边长！！ }; //创建对象后默认显示多边形 var myStock = new Polygon(config); 若需要生成多维能力图，关联数据，添加拖拽config如下： var config = { id: &apos;target&apos;,//目标DOM元素id sideNumber: 5,//多边形边数 innerWidth: 180,//顶点重心距离，注意不是边长！！ levelArr: [4,3,4,3,5],//顶点关联数据 levelRange: [1,10,1],//[min,max,step] dragCallback: function(arr){ console.log(arr); } } DemoDemo1-自定义生成正多边形Demo2-添加关联数据和拖拽事件以改变数据 Remark 异步修改对象属性 自定义样式 添加级别对应文字提示 ES6版本，react组件 ..etc]]></content>
+      <categories>
+        <category>Project</category>
+      </categories>
+      <tags>
+        <tag>D3</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[完善的js错误处理机制]]></title>
     <url>%2F2017%2F06%2F09%2F%E5%AE%8C%E5%96%84%E7%9A%84js%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6%2F</url>
-    <content type="text"><![CDATA[完善的javascript错误处理机制 ECMA标准定义了下列7种错误类型： Error基类型，其他所有错误类型都继承自该类型，实际出现情况很少，大多抛出的是开发人员自定义错误； EvalError会在使用Eval()函数发生异常时抛出，例如没有把Eval()当做函数使用： new eval(); eval = foo; //以上都会抛出EvalError RangeError在数值超出响应范围时触发，例如: var item1 = new Array(-20); var item2 = new Array(Number.MAX_VALUE) TypeError在变量中保存不存在的类型或访问不存在的方法，都会抛出这类型错误： var a = new 10; console.log(1 in 10); SyntaxError 单纯的语法错误，出现频率很高 ReferenceError 找不到对象，访问不存在的变量时抛出此类错误 URIError 使用encodeURI()或deocdeURI(), 但URI格式不正确时导致此类错误 try-catch语句作为js种处理异常的标准方式123456789101112131415Try&#123; //可能会出现错误的语句&#125;catch(error)&#123; //若出现错误则捕获error,跳到这里 if(error instanceof TypeError)&#123; //处理类型错误 &#125;else if(error instanceof SyntaxError)&#123; //处理语法错误 &#125;else&#123; //。。。其他类型 &#125;&#125; finally&#123; //可选，try,catch语句执行完都会执行finally里语句&#125; 适合处理我们无法控制的错误，例如函数传参类型不对，需要throw 错误信息 throw抛出自定义错误：12throw 123；throw “something wrong!&quot; 也可模拟类似的浏览器错误:12throw new SyntaxError(“custom syntax error!”);//上述浏览器错误都可以throw出来 error事件任何没有通过try-catch异常处理的错误都会触发window对象的error事件。指定onerror事件处理程序，必须使用DOM0级事件，没有遵循DOM2级事件的标准格式12Window.onerror = function(message, url, line)&#123; &#125;]]></content>
+    <content type="text"><![CDATA[ECMA标准定义了下列7种错误类型： Error基类型，其他所有错误类型都继承自该类型，实际出现情况很少，大多抛出的是开发人员自定义错误； EvalError会在使用Eval()函数发生异常时抛出，例如没有把Eval()当做函数使用： new eval(); eval = foo; //以上都会抛出EvalError RangeError在数值超出响应范围时触发，例如: var item1 = new Array(-20); var item2 = new Array(Number.MAX_VALUE) TypeError在变量中保存不存在的类型或访问不存在的方法，都会抛出这类型错误： var a = new 10; console.log(1 in 10); SyntaxError 单纯的语法错误，出现频率很高 ReferenceError 找不到对象，访问不存在的变量时抛出此类错误 URIError 使用encodeURI()或deocdeURI(), 但URI格式不正确时导致此类错误 try-catch语句作为js种处理异常的标准方式123456789101112131415Try&#123; //可能会出现错误的语句&#125;catch(error)&#123; //若出现错误则捕获error,跳到这里 if(error instanceof TypeError)&#123; //处理类型错误 &#125;else if(error instanceof SyntaxError)&#123; //处理语法错误 &#125;else&#123; //。。。其他类型 &#125;&#125; finally&#123; //可选，try,catch语句执行完都会执行finally里语句&#125; 适合处理我们无法控制的错误，例如函数传参类型不对，需要throw 错误信息 throw抛出自定义错误：12throw 123；throw “something wrong!&quot; 也可模拟类似的浏览器错误:12throw new SyntaxError(“custom syntax error!”);//上述浏览器错误都可以throw出来 error事件任何没有通过try-catch异常处理的错误都会触发window对象的error事件。指定onerror事件处理程序，必须使用DOM0级事件，没有遵循DOM2级事件的标准格式12Window.onerror = function(message, url, line)&#123; &#125;]]></content>
       <categories>
         <category>Notes</category>
       </categories>
@@ -50,6 +74,9 @@
   <entry>
     <title><![CDATA[一台电脑生成多个ssh key]]></title>
     <url>%2F2017%2F06%2F06%2F%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E7%94%9F%E6%88%90%E5%A4%9A%E4%B8%AAssh-key%2F</url>
-    <content type="text"><![CDATA[##一台电脑生成多个ssh key1、在用户.ssh/目录下生成后缀为xxx的ssh key命令：ssh-keygen -t rsa -b 4096 -C “my@emailaddress.com” -f ~/.ssh/id_rsa_xxx 2、上一步会在指定文件夹下生成两个文件：id_rsa_xxx 和 id_rsa_xxx.pub打开.pub，将其完整复制到需要添加公钥的网站3、配置config： 新建并打开config配置文件: vim ~/.ssh/config Host github.com #注意:这里HOST的值也是HostName的值 HostName github.com User git IdentityFile ~/.ssh/id_rsa_aaa Host git.oschina.net HostName git.oschina.net User git IdentityFile ~/.ssh/id_rsa_bbb]]></content>
+    <content type="text"><![CDATA[##一台电脑生成多个ssh key 在用户.ssh/目录下生成后缀为xxx的ssh key命令：ssh-keygen -t rsa -b 4096 -C “my@emailaddress.com” -f ~/.ssh/id_rsa_xxx 上一步会在指定文件夹下生成两个文件：id_rsa_xxx 和 id_rsa_xxx.pub打开.pub，将其完整复制到需要添加公钥的网站 配置config： 新建并打开config配置文件: vim ~/.ssh/config Host github.com #注意:这里HOST的值也是HostName的值 HostName github.com User git IdentityFile ~/.ssh/id_rsa_aaa Host git.oschina.net HostName git.oschina.net User git IdentityFile ~/.ssh/id_rsa_bbb]]></content>
+      <categories>
+        <category>Note</category>
+      </categories>
   </entry>
 </search>
